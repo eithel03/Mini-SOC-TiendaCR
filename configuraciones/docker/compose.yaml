@@ -1,0 +1,7 @@
+services:
+  juice-shop:
+    image: bkimminich/juice-shop:latest
+    container_name: soc-juice-shop
+    restart: unless-stopped
+    ports:
+      - "192.168.56.104:3000:3000"
