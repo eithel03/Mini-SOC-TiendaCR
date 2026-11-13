@@ -1,0 +1,8 @@
+<group name="mini_soc,suricata,">
+  <rule id="100100" level="10">
+    <if_sid>86601</if_sid>
+    <field name="alert.signature_id">^1000002$</field>
+    <description>MINI-SOC: Solicitudes repetidas de autenticacion detectadas por Suricata</description>
+    <group>authentication_failures,mini_soc_detection,</group>
+  </rule>
+</group>

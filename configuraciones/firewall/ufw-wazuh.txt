@@ -1,0 +1,12 @@
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), disabled (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+22/tcp                     ALLOW IN    192.168.56.1              
+443/tcp                    ALLOW IN    192.168.56.1              
+1514/tcp                   ALLOW IN    192.168.56.104            
+1515/tcp                   ALLOW IN    192.168.56.104            
+
