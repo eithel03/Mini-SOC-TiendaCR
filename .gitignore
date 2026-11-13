@@ -1,0 +1,49 @@
+
+# Variables de entorno y secretos
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+*.kdbx
+
+# Credenciales y archivos locales
+credentials.json
+secrets.json
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editores
+.vscode/
+.idea/
+
+# Sistemas operativos
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Máquinas virtuales
+*.vdi
+*.vmdk
+*.vbox
+*.vbox-prev
+*.ova
+*.ovf
+*.iso
+
+# Capturas de tráfico potencialmente sensibles
+*.pcap
+*.pcapng
