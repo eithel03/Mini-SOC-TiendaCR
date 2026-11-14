@@ -1,0 +1,25 @@
+MINI SOC TIENDACR - RESPUESTA AUTOMATICA
+
+Fecha: 13 de noviembre de 2026
+Servidor: SOC-Objetivo
+IP atacante: 192.168.56.105
+IP objetivo: 192.168.56.104
+
+Deteccion:
+- Regla Suricata: 1000002
+- Regla Wazuh: 100100
+- Descripcion: Solicitudes repetidas de autenticacion
+
+Respuesta automatica:
+- Herramienta: Wazuh Active Response
+- Comando: firewall-drop
+- Accion: bloqueo temporal de IP
+- Duracion configurada: 60 segundos
+
+Eventos registrados (UTC):
+22:09:38 - Suricata detecta solicitudes repetidas.
+22:09:39 - Wazuh ejecuta firewall-drop (bloqueo).
+22:10:40 - Wazuh retira el bloqueo automaticamente.
+
+Evidencia visual:
+evidencias/alertas-wazuh/ataque-02-deteccion-bloqueo-desbloqueo.png
