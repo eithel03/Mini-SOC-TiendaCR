@@ -612,6 +612,11 @@ logging:
 
 # Linux high speed capture support
 af-packet:
+  - interface: tailscale0
+    threads: 1
+    cluster-id: 98
+    cluster-type: cluster_flow
+    defrag: yes
   - interface: enp0s8
     # Number of receive threads. "auto" uses the number of cores
     #threads: auto

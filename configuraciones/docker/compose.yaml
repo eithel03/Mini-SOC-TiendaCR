@@ -5,3 +5,4 @@ services:
     restart: unless-stopped
     ports:
       - "192.168.56.104:3000:3000"
+      - "100.102.6.18:3000:3000"
