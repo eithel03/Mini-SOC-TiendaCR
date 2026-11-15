@@ -3,6 +3,28 @@ services:
     image: bkimminich/juice-shop:latest
     container_name: soc-juice-shop
     restart: unless-stopped
+
+  waf:
+    image: owasp/modsecurity-crs:4.25.2-nginx-lts
+    container_name: soc-waf
+    restart: unless-stopped
+    depends_on:
+      - juice-shop
+    environment:
+      BACKEND: "http://juice-shop:3000"
+      PORT: "8080"
+      MODSEC_RULE_ENGINE: "On"
+      MODSEC_REQ_BODY_ACCESS: "On"
+      BLOCKING_PARANOIA: "1"
+
+  nginx:
+    image: nginx:stable-alpine
+    container_name: soc-nginx
+    restart: unless-stopped
+    depends_on:
+      - waf
     ports:
-      - "192.168.56.104:3000:3000"
-      - "100.102.6.18:3000:3000"
+      - "192.168.56.104:3000:80"
+      - "100.102.6.18:3000:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
